@@ -21,6 +21,14 @@ class PersephoneGame(Game):
         # self.init_state = Persephone.FB(0)
         # self.init_state = Persephone.HSR(2,24,144)
         # self.init_state = Persephone.H(100,30)
+        
+        # Persephone.generatePredicate('MOD', ['m','n'],"ITE(Mod(m,n),TrueConst(),FalseConst())")
+        # Persephone.generatePredicate('NMOD', ['m','n'],"ITE(Mod(m,n),FalseConst(),TrueConst())")
+        # Persephone.generatePredicate('CD', ['m','n','x'],"And(MOD(m,x),MOD(n,x))")
+        # Persephone.generatePredicate('NCD', ['m','n','x'],"Or(NMOD(m,x),NMOD(n,x))")
+        # Persephone.generatePredicate('GCD', ['m','n'],"Exists(x,Domain(1,m),And(CD(m,n,x),Forall(y,Domain(Add(x,1),n),NCD(m,n,y))))")
+        # Persephone.generatePredicate('GCD_WRAPPER', ['m','n'],"ITE(LS(m,n),GCD(m,n),GCD(n,m))")
+        # self.init_state = Persephone.GCD_WRAPPER(53,67)
 
         # NG: missing player info when entring the predicate
         Persephone.generatePredicate('NIM', ['k','n'],"ITE(LE(n,k),TrueConst(),Exists(m,Domain(1,k+1),Not(NIM(k,Sub(n,m)))))")
