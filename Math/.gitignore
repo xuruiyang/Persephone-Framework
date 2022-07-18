@@ -1,0 +1,18 @@
+*.pyc
+.DS_Store
+
+/temp/
+/.project
+/.pydevproject
+
+# checkpoint
+checkpoints/
+
+# For PyCharm users
+.idea/
+
+# For records
+/record*/
+
+# For paycache
+/__pycache__/
