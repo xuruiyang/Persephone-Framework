@@ -489,6 +489,35 @@ class Add(BinOP,Algebra):
 	def getRole(self):
 		return None
 
+class Mod(BinOP,Algebra):
+	def __init__(self, lf:Union[Variable,int], rf:Union[Variable,int]):
+		self._left_form = lf
+		self._right_form = rf
+		self._f_type = '%'
+		self.preorder = -1
+
+	def f2str(self,expand=False):
+		# l_int=isinstance(self._left_form,int)
+		# r_int=isinstance(self._right_form,int)
+		# l_str = self._left_form.f2str() if not l_int else str(self._left_form)
+		# r_str = self._right_form.f2str() if not r_int else str(self._right_form)
+		# return l_str +self._f_type +r_str
+		l_int=isinstance(self._left_form,int)
+		r_int=isinstance(self._right_form,int)
+		l_val = self._left_form.eval() if not l_int else self._left_form
+		r_val = self._right_form.eval() if not r_int else self._right_form
+		return str(l_val) +self._f_type +str(r_val)
+
+	def eval(self):
+		l_int=isinstance(self._left_form,int)
+		r_int=isinstance(self._right_form,int)
+		l_val = self._left_form.eval() if not l_int else self._left_form
+		r_val = self._right_form.eval() if not r_int else self._right_form
+		return l_val%r_val
+
+	def getRole(self):
+		return None
+
 class Mult(BinOP,Algebra):
 	def __init__(self, lf:Union[Variable,int], rf:Union[Variable,int]):
 		self._left_form = lf
