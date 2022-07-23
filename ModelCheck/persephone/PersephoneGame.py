@@ -13,11 +13,11 @@ class PersephoneGame(Game):
         self.n = n
         self.MAX_VEC_SIZE = Persephone.S_TOTAL+1
         self.MAX_ACT_SIZE = conf.MAX_ACT_SIZE
-        Persephone.generateGFP('Z',['s'],"And(Or(P(s),X(s)),Forall(a,s.getActions(),Z(s.next(a))))")
-        Persephone.generateLFP('X',['s'],"Or(Q(s),Forall(a,s.getActions(),X(s.next(a))))")
-        Persephone.generatePredicate('P',['s'],'ITE(EQ(s.phi0_hungry(),0),TrueConst(),FalseConst())')
-        Persephone.generatePredicate('Q',['s'],'ITE(EQ(s.phi0_eat(),1),TrueConst(),FalseConst())')
-        self.init_state = Persephone.Z(DinePhiTranSys(conf.NUM_P))
+        # Persephone.generateGFP('Z',['s'],"And(Or(P(s),X(s)),Forall(a,s.getActions(),Z(s.next(a))))")
+        # Persephone.generateLFP('X',['s'],"Or(Q(s),Forall(a,s.getActions(),X(s.next(a))))")
+        # Persephone.generatePredicate('P',['s'],'ITE(EQ(s.phi0_hungry(),0),TrueConst(),FalseConst())')
+        # Persephone.generatePredicate('Q',['s'],'ITE(EQ(s.phi0_eat(),1),TrueConst(),FalseConst())')
+        # self.init_state = Persephone.Z(DinePhiTranSys(conf.NUM_P))
 
     def getInitBoard(self):
         # return initial board (numpy board)

@@ -1,0 +1,4 @@
+GAME
+	PREDICATE HSR(k,q,n)=ITE(EQ(n,1),TRUE,ITE(Or(EQ(k,0),EQ(q,0)),FALSE,Exists(m,Domain(1,n),And(HSR(Sub(k,1),Sub(q,1),m),HSR(k,Sub(q,1),Sub(n,m))))))
+	PREDICATE HSRCOMP(k,q)=Exists(n,Domain(1,20),And(HSR(k,q,n),Forall(n1,Domain(Add(n,1),20),Not(HSR(k,q,n1)))))
+PLAY HSRCOMP(3,4)
