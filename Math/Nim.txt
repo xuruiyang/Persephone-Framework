@@ -1,0 +1,3 @@
+GAME
+	PREDICATE NIM(k,n)=ITE(LE(n,k),TRUE ,Exists(m,Domain(1,Add(k,1)),Not(NIM(k,Sub(n,m)))))
+PLAY NIM(3,50)

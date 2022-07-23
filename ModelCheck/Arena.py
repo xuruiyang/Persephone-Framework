@@ -248,7 +248,7 @@ class Arena():
             p1 = oneWon
             p2 = twoWon
             eps += 1
-            eps_time.update(time.time() - end)                                                                       total=bar.elapsed_td, eta=bar.eta_td, p1=p1, p2=p2)
+            eps_time.update(time.time() - end)
             logging.warning('({eps}/{maxeps}) Eps Time: {et:.3f}s | P_1: {p1:} OP_2: {p2:}'.format(eps=eps, maxeps=maxeps, et=eps_time.avg, p1=p1, p2=p2))
 
         print(f"P_1_A_Faults {self.switch_count[1]} : P_2_B_Faults {self.switch_count[-1]}")

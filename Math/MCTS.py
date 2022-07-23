@@ -159,9 +159,9 @@ class MCTS():
                     v_tmp = s_tmp.getStateRep()
                     v_tmp.append(p_tmp)
                     if p_tmp==1:
-                        _, q = self.nnet.predict(np.array([v_tmp]))
+                        _, q, _ = self.nnet.predict(np.array([v_tmp]))
                     else:
-                        _, q = self.nnet2.predict(np.array([v_tmp]))
+                        _, q, _ = self.nnet2.predict(np.array([v_tmp]))
                     r = self.game.getGameEnded(s_tmp, p_tmp, r_tmp)
                     if r==0:
                         self.Qsa[(s,a)] = -q if curPlayer!=p_tmp else q

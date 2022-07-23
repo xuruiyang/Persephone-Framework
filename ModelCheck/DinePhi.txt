@@ -1,0 +1,6 @@
+GAME
+	GFP Z(s)=And(Or(P(s),X(s)),Forall(a,s.getActions(),Z(s.next(a))))
+	LFP X(s)=Or(Q(s),Forall(a,s.getActions(),X(s.next(a))))
+	PREDICATE P(s)=ITE(EQ(s.phi0_hungry(),0),TRUE,FALSE)
+	PREDICATE Q(s)=ITE(EQ(s.phi0_eat(),1),TRUE,FALSE)
+PLAY Z(DinePhiTranSys.init(10))

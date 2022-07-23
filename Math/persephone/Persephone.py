@@ -954,7 +954,7 @@ class {0}(Predicate):
 		return self.pidVec+self.paramVec+self.varVec
 
 	""".format(name,init_params,init_body,params_def,body_def,body,predicate_id)
-	# print(class_str)
+	print(class_str)
 	exec(class_str)
 
 

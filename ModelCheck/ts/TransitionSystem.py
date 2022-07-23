@@ -92,6 +92,10 @@ class DinePhiTranSys(TransitionSystem):
 		self.action = None
 		self.n = n
 
+	def init(n):
+		return DinePhiTranSys(n)
+
+
 	def eval(self):
 		from persephone.PersephoneMu import Variable
 		if self.action is None:

@@ -31,10 +31,9 @@ class PersephoneGame(Game):
         # self.init_state = Persephone.GCD_WRAPPER(53,67)
 
         # NG: missing player info when entring the predicate
-        Persephone.generatePredicate('NIM', ['k','n'],"ITE(LE(n,k),TrueConst(),Exists(m,Domain(1,k+1),Not(NIM(k,Sub(n,m)))))")
-        # NG: n could be negative and let the player escape from the game
-        # Persephone.generatePredicate('NIM', ['k','n'],"Or(ITE(LE(n,k),TrueConst(),FalseConst()),Exists(m,Domain(1,k+1),Not(NIM(k,Sub(n,m)))))")
-        self.init_state = Persephone.NIM(3,50)
+        # Persephone.generatePredicate('NIM', ['k','n'],"ITE(LE(n,k),TrueConst(),Exists(m,Domain(1,Add(k,1)),Not(NIM(k,Sub(n,m)))))")
+        
+        # self.init_state = Persephone.NIM(3,50)
 
     def getInitBoard(self):
         # return initial board (numpy board)
