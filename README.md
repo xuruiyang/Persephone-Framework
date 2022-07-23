@@ -7,6 +7,8 @@ For example:
 
 python run.py Nim.txt
 
+python run.py DinePhi.txt
+
 Change configurations in run.py for different hyperparameters.
 
 For QSAT Change QDIMACS file in .\qsat\generated for different instances.
